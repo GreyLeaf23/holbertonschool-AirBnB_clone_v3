@@ -29,7 +29,7 @@ def get_user(user_id):
 
 
 @app_views.route('/users/<user_id>', methods=['DELETE'],
-                    strict_slashes=False)
+                 strict_slashes=False)
 def delete_user(user_id):
     """Delete a user"""
     user = storage.get(User, user_id)
@@ -55,7 +55,7 @@ def create_user():
 
 
 @app_views.route('/users/<user_id>', methods=['PUT'],
-                    strict_slashes=False)
+                 strict_slashes=False)
 def update_user(user_id):
     """Update a user"""
     user = storage.get(User, user_id)
