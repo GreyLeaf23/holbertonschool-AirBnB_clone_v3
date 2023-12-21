@@ -15,6 +15,7 @@ def teardown_db(exception):
     """Closes the database again at the end of the request."""
     storage.close()
 
+
 # Task 6 - Error handler
 @app.errorhandler(404)
 def page_not_found(error):
