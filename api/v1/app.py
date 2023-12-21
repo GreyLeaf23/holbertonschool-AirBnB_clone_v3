@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Starts a Flask web application"""
-from flask import Flask
+from flask import Flask, jsonify
 from models import storage
 from api.v1.views import app_views
 import os
@@ -14,6 +14,13 @@ app.register_blueprint(app_views)  # Register Blueprint with Flask app
 def teardown_db(exception):
     """Closes the database again at the end of the request."""
     storage.close()
+
+# Task 6 - Error handler
+@app.errorhandler(404)
+def page_not_found(error):
+    """Handles 404 error"""
+    return jsonify({"error": "Not found"}), 404
+# Task 6 - End
 
 
 if __name__ == "__main__":
