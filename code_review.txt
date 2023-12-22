@@ -1,0 +1,2 @@
+Peer to review code in 'storage_get_count' branch:
+Joshua E. Santiago
