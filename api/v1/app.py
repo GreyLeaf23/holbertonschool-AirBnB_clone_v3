@@ -13,6 +13,7 @@ app.register_blueprint(app_views)  # Register Blueprint with Flask app
 CORS(app, resources={r"/api/v1/*": {"origins": "0.0.0.0"}})
 # Task 13 - End
 
+
 @app.teardown_appcontext
 def teardown_db(exception):
     """Closes the database again at the end of the request."""
