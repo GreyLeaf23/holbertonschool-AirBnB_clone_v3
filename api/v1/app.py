@@ -4,11 +4,14 @@ from flask import Flask, jsonify
 from models import storage
 from api.v1.views import app_views
 import os
+from flask_cors import CORS
 
 # Task 4 - Create an instance of Flask
 app = Flask(__name__)
 app.register_blueprint(app_views)  # Register Blueprint with Flask app
-
+# Task 13 - Flask-Cors
+CORS(app, resources={r"/api/v1/*": {"origins": "0.0.0.0"}})
+# Task 13 - End
 
 @app.teardown_appcontext
 def teardown_db(exception):
